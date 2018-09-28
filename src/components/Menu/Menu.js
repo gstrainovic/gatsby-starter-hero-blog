@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 require("core-js/fn/array/from");
 
-import { FaHome, FaNewspaper, FaImages } from "react-icons/fa/";
+import { FaHome, FaNewspaper } from "react-icons/fa/";
 import { FaSearch } from "react-icons/fa/";
 import { FaEnvelope } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
@@ -25,7 +25,6 @@ class Menu extends React.Component {
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
       { to: "/contact/", label: "Kontakt", icon: FaEnvelope },
-      { to: "/portfolio", label: "Portfolio", icon: FaImages },
       { to: "/blog/", label: "Blog", icon: FaNewspaper },
       { to: "/kategorien/", label: "Kategorien", icon: FaTag },
       { to: "/suche/", label: "Suche", icon: FaSearch },
