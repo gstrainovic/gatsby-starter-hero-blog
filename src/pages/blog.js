@@ -3,7 +3,6 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
-import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 
 class IndexPage extends React.Component {
@@ -40,11 +39,6 @@ class IndexPage extends React.Component {
 
     return (
       <React.Fragment>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
-          )}
-        </ThemeContext.Consumer>
 
         <hr ref={this.separator} />
 
@@ -73,7 +67,7 @@ export default IndexPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query IndexQuery {
+  query BlogQuery {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
       sort: { fields: [fields___prefix], order: DESC }
