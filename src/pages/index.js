@@ -4,9 +4,6 @@ import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
-import Card from 'antd/lib/card';
-import "antd/lib/card/style/index.css";
-const { Meta } = Card;
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -48,18 +45,9 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <hr ref={this.separator} />
 
-  <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-  >
-    <Meta
-      title="Europe Street beat"
-      description="www.instagram.com"
-    />
-  </Card>
+
+        <hr ref={this.separator} />
 
         <Seo facebook={facebook} />
 

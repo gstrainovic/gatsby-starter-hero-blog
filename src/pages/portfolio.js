@@ -3,9 +3,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Contact from "../components/Contact";
 import Headline from "../components/Article/Headline";
+
 import Seo from "../components/Seo";
+import Card from 'antd/lib/card';
+import "antd/lib/card/style/index.css";
+const { Meta } = Card;
 
 const ContactPage = props => {
   const {
@@ -22,9 +25,18 @@ const ContactPage = props => {
         {theme => (
           <Article theme={theme}>
             <header>
-              <Headline title="Kontakt" theme={theme} />
+              <Headline title="Portfolio" theme={theme} />
             </header>
-            <Contact theme={theme} />
+          <Card theme={theme}
+              hoverable
+              style={{ width: 240 }}
+              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+            >
+              <Meta
+                title="Europe Street beat"
+                description="www.instagram.com"
+              />
+            </Card>
           </Article>
         )}
       </ThemeContext.Consumer>
@@ -42,7 +54,7 @@ export default ContactPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query ContactQuery {
+  query PortfolioQuery {
     site {
       siteMetadata {
         facebook {

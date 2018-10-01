@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Seo from "../components/Seo";
+import Article from "../components/Article";
+import Headline from "../components/Article/Headline";
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -40,19 +42,29 @@ class IndexPage extends React.Component {
     return (
       <React.Fragment>
 
-        <hr ref={this.separator} />
-
         <ThemeContext.Consumer>
-          {theme => <Blog posts={posts} theme={theme} />}
+          {theme =>
+
+          <Article theme={theme}>
+            <header>
+              <Headline
+                title="Blog"
+                theme={theme}
+              />
+            </header>
+          <Blog posts={posts} theme={theme} />
+          </Article>
+
+
+
+          }
         </ThemeContext.Consumer>
 
         <Seo facebook={facebook} />
 
         <style jsx>{`
-          hr {
-            margin: 0;
-            border: 0;
-          }
+          header {
+            margin-bottom: -80px; }
         `}</style>
       </React.Fragment>
     );
