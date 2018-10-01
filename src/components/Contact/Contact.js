@@ -99,7 +99,7 @@ const Contact = props => {
                 )}
               </FormItem>
               <FormItem>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" size="large" htmlType="submit">
                   Submit
                 </Button>
               </FormItem>
@@ -132,13 +132,7 @@ const Contact = props => {
                 font-size: 1.2em;
                 padding: 0.5em 0.6em;
               }
-              .form :global(.ant-btn-primary) {
-                height: auto;
-                font-size: 1.2em;
-                padding: 0.5em 3em;
-                background: ${theme.color.brand.primary};
-                border: 1px solid ${theme.color.brand.primary};
-              }
+
               .form :global(.ant-form-explain) {
                 margin-top: 0.2em;
               }

@@ -26,7 +26,7 @@ const CategoryTemplate = props => {
           <Article theme={theme}>
             <header>
               <Headline theme={theme}>
-                <span>Posts in category</span> <FaTag />
+                <span>Beiträge in Kategorie</span> <FaTag />
                 {category}
               </Headline>
               <p className="meta">
