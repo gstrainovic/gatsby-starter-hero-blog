@@ -30,7 +30,7 @@ const CategoryTemplate = props => {
                 {category}
               </Headline>
               <p className="meta">
-                Es gibt <strong>{totalCount}</strong>Beitr{totalCount >
+                Es gibt <strong>{totalCount}</strong > Beitr{totalCount >
                 1
                   ? "äge"
                   : "ag"}{" "}
