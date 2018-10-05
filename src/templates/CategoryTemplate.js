@@ -30,11 +30,11 @@ const CategoryTemplate = props => {
                 {category}
               </Headline>
               <p className="meta">
-                There {totalCount > 1 ? "are" : "is"} <strong>{totalCount}</strong> post{totalCount >
+                Es gibt <strong>{totalCount}</strong>Beitr{totalCount >
                 1
-                  ? "s"
-                  : ""}{" "}
-                in the category.
+                  ? "äge"
+                  : "ag"}{" "}
+                in dieser Kategorie.
               </p>
               <List edges={edges} theme={theme} />
             </header>
