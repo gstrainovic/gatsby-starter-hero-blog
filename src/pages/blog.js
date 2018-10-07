@@ -8,7 +8,7 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Button from "antd/lib/button";
 import "antd/lib/button/style/index.css";
-import "antd/dist/antd.css"
+import "antd/dist/antd.css";
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -44,48 +44,26 @@ class IndexPage extends React.Component {
 
     return (
       <React.Fragment>
-
         <ThemeContext.Consumer>
-          {theme =>
+          {theme => (
+            <Article theme={theme}>
+              <header>
+                <Headline type="primary" title="Blog" theme={theme} />
+              </header>
 
-          <Article theme={theme}>
-            <header>
-              <Headline
-                type="primary"
-                title="Blog"
-                theme={theme}
-              />
-            </header>
-
-          <div>
-          <Button
-            type="primary"
-            href="/kategorien"
-            size="large"
-            icon="tags">
-            Kategorien
-          </Button>
-          </div>
-          <Blog posts={posts} theme={theme} />
-
-          </Article>
-
-          }
-
+              <div>
+                <Button type="primary" href="/kategorien" size="large" icon="tags">
+                  Kategorien
+                </Button>
+              </div>
+              <Blog posts={posts} theme={theme} />
+            </Article>
+          )}
         </ThemeContext.Consumer>
 
-
-        <style jsx>{`
-
-
-
-        `}</style>
-
-
+        <style jsx>{``}</style>
 
         <Seo facebook={facebook} />
-
-
       </React.Fragment>
     );
   }
