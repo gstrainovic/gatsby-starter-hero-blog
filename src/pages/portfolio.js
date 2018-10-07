@@ -6,8 +6,11 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 
 import Seo from "../components/Seo";
-import Card from 'antd/lib/card';
+import Card from "antd/lib/card";
 import "antd/lib/card/style/index.css";
+import "./portfolio.css";
+import "antd/dist/antd.less"; // Import Ant Design styles by less entry
+import "../my-antd.less"; // variables to override above
 const { Meta } = Card;
 
 const ContactPage = props => {
@@ -27,15 +30,23 @@ const ContactPage = props => {
             <header>
               <Headline title="Portfolio" theme={theme} />
             </header>
-          <Card theme={theme}
+            <Card
+              className="myCard"
+              //theme={theme}
               hoverable
-              style={{ width: 240 }}
-              cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+              style={{
+                width: 240,
+                borderRadius: 25
+              }}
+              cover={
+                <img
+                  style={{ borderRadius: "25px 25px 0 0" }}
+                  alt="example"
+                  src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                />
+              }
             >
-              <Meta
-                title="Europe Street beat"
-                description="www.instagram.com"
-              />
+              <Meta title="Europe Street beat" description="www.instagram.com" />
             </Card>
           </Article>
         )}

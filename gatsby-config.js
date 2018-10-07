@@ -48,15 +48,24 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
     `gatsby-plugin-styled-jsx-postcss`, // as above
+    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+        modifyVars: {
+          "card-shadow": "0 24px 16px 0 rgba(0,0,0,0.2);"
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/layouts/`)
       }
     },
-/*
+    /*
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
@@ -199,6 +208,8 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID
       }
     },
+    // in gatsby-config.js
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {

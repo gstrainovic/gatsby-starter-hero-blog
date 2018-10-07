@@ -45,8 +45,6 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-
-
         <hr ref={this.separator} />
 
         <Seo facebook={facebook} />
