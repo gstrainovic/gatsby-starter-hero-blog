@@ -12,7 +12,6 @@ const PostTemplate = props => {
   const {
     data: {
       post,
-      authornote: { html: authorNote },
       site: {
         siteMetadata: { facebook }
       }
@@ -29,7 +28,6 @@ const PostTemplate = props => {
               post={post}
               next={next}
               prev={prev}
-              authornote={authorNote}
               facebook={facebook}
               theme={theme}
             />
@@ -61,7 +59,6 @@ export const postQuery = graphql`
       }
       frontmatter {
         title
-        author
         category
         cover {
           childImageSharp {
@@ -71,10 +68,6 @@ export const postQuery = graphql`
           }
         }
       }
-    }
-    authornote: markdownRemark(fileAbsolutePath: { regex: "/author/" }) {
-      id
-      html
     }
     site {
       siteMetadata {

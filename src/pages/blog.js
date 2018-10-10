@@ -92,7 +92,6 @@ export const query = graphql`
           frontmatter {
             title
             category
-            author
             cover {
               children {
                 ... on ImageSharp {
