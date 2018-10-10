@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
+import Contact from "../components/Contact";
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -57,6 +58,10 @@ class IndexPage extends React.Component {
                 <Headline type="primary" title="Dienstleistungen" theme={theme} />
               </header>
               <Portfolio posts={posts} theme={theme} />
+             <header>
+                <Headline title="Kontakt" theme={theme} />
+            </header>
+              <Contact theme={theme} />
             </Article>
           )}
         </ThemeContext.Consumer>

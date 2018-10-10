@@ -58,42 +58,60 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div className="form">
+           <h1>Strainovic IT</h1>
+           <h1>Bahnstrasse 9b</h1>
+           <h1>CH-9323 Steinach</h1>
+           <h1><a href="tel:+41 79 411 71 77">+41 79 411 71 77</a></h1>
+           <h1><a href="mailto:info@strainovic-it.ch">info@strainovic-it.ch</a></h1>
+           <br></br>
             <Form
               name="contact"
               onSubmit={handleSubmit}
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
-              <FormItem label="Name">
+              <FormItem label="Ihr Vorname und Nachname">
                 {getFieldDecorator("name", {
                   rules: [
                     {
+                      required: true,
+                      message: "Geben Sie bitte Ihren Vorname und Nachname ein",
                       whitespace: true
                     }
                   ]
-                })(<Input name="name" />)}
+                })(<Input
+                      name="name"
+                      placeholder="Ihr Vorname und Nachname"
+                  />)}
               </FormItem>
-              <FormItem label="E-mail">
+              <FormItem label="Ihre E-Mail Adresse">
                 {getFieldDecorator("email", {
                   rules: [
                     {
                       required: true,
-                      message: "Please input your e-mail address!",
+                      message: "Geben Sie bitte Ihre E-Mail Adresse ein",
                       whitespace: true,
                       type: "email"
                     }
                   ]
-                })(<Input name="email" />)}
+                })(<Input
+                      name="email"
+                      placeholder="Ihre E-Mail Adresse"
+                    />
+                )}
               </FormItem>
-              <FormItem label="Message">
+              <FormItem label="Ihre Mitteilung">
                 {getFieldDecorator("message", {
                   rules: [
-                    { required: true, message: "Please input your message!", whitespace: true }
+                    { required: true,
+                      message: "Geben Sie bitte eine Mitteilung ein",
+                      whitespace: true
+                    }
                   ]
                 })(
                   <TextArea
                     name="message"
-                    placeholder="Autosize height with minimum and maximum number of lines"
+                    placeholder="Ihre Mitteilung"
                     autosize={{ minRows: 4, maxRows: 10 }}
                   />
                 )}
@@ -104,6 +122,8 @@ const Contact = props => {
                 </Button>
               </FormItem>
             </Form>
+
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls" width="100%" height="400" frameborder="0" ></iframe>
 
             {/* --- STYLES --- */}
             <style jsx>{`
@@ -144,8 +164,12 @@ const Contact = props => {
               }
             `}</style>
           </div>
+
+
+
         )}
       </ThemeContext.Consumer>
+
     </React.Fragment>
   );
 };

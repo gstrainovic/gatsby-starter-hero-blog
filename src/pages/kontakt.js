@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 
+
 const ContactPage = props => {
   const {
     data: {
@@ -26,9 +27,9 @@ const ContactPage = props => {
             </header>
             <Contact theme={theme} />
           </Article>
+
         )}
       </ThemeContext.Consumer>
-
       <Seo facebook={facebook} />
     </React.Fragment>
   );
