@@ -65,6 +65,7 @@ module.exports = {
         component: require.resolve(`./src/layouts/`)
       }
     },
+/*
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
@@ -75,6 +76,7 @@ module.exports = {
         chunkSize: 10000 // default: 1000
       }
     },
+*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -87,6 +89,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/posts/`,
         name: "posts"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/portfolio/`,
+        name: "portf"
       }
     },
     {

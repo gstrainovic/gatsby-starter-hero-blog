@@ -1,5 +1,4 @@
 import { FaArrowRight } from "react-icons/fa/";
-import { FaCalendar } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
@@ -9,9 +8,9 @@ import React from "react";
 const Item = props => {
   const {
     theme,
-    post: {
+    portf: {
       excerpt,
-      fields: { slug, prefix },
+      fields: { slug },
       frontmatter: {
         title,
         category,
@@ -33,9 +32,6 @@ const Item = props => {
             {title} <FaArrowRight className="arrow" />
           </h1>
           <p className="meta">
-            <span>
-              <FaCalendar size={18} /> {prefix}
-            </span>
             {category && (
               <span>
                 <FaTag size={18} /> {category}
@@ -235,7 +231,7 @@ const Item = props => {
 };
 
 Item.propTypes = {
-  post: PropTypes.object.isRequired,
+  portf: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired
 };
 
