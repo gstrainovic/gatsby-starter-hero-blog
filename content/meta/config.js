@@ -19,6 +19,8 @@ module.exports = {
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",
   manifestDisplay: "standalone",
+  // gravatar
+  gravatarMD5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
   // social
   authorSocialLinks: [
     { name: "github", url: "https://github.com/greglobinski" },
