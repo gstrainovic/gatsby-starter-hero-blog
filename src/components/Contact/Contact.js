@@ -58,9 +58,18 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div className="form">
-           <h1><FaMap size={18}/> Strainovic IT, Bahnstrasse 9b, CH-9323 Steinach</h1>
+           <h1><FaMap size={18}/> Strainovic IT</h1>
+           <h1>&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h1>
+           <h1>&nbsp;&nbsp;&nbsp;&nbsp;Bahnstrasse 9b</h1>
+           <h1>&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h1>
+           <br></br>
            <h1><FaPhone size={18}/><a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a></h1>
+           <br></br>
            <h1><FaEnvelope size={18}/><a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a></h1>
+           <br></br>
+           <br></br>
+           <br></br>
+           <h1>Ich freue mich auf Ihre Nachricht</h1>
            <br></br>
             <Form
               name="contact"
@@ -120,7 +129,11 @@ const Contact = props => {
                 </Button>
               </FormItem>
             </Form>
-
+           <br></br>
+           <br></br>
+           <br></br>
+            <h1>Gerne berate ich Sie auch bei mir persönlich</h1>
+            <br></br>
             <iframe src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls" width="100%" height="400" frameborder="0" ></iframe>
 
             {/* --- STYLES --- */}
