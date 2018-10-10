@@ -58,19 +58,29 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div className="form">
-           <h1><FaMap size={18}/> Strainovic IT</h1>
-           <h1>&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h1>
-           <h1>&nbsp;&nbsp;&nbsp;&nbsp;Bahnstrasse 9b</h1>
-           <h1>&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h1>
-           <br></br>
-           <h1><FaPhone size={18}/><a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a></h1>
-           <br></br>
-           <h1><FaEnvelope size={18}/><a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a></h1>
-           <br></br>
-           <br></br>
-           <br></br>
-           <h1>Ich freue mich auf Ihre Nachricht</h1>
-           <br></br>
+            <h1>
+              <FaMap size={18} /> Strainovic IT
+            </h1>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h1>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Bahnstrasse 9b</h1>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h1>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;St.Gallen (SG)</h1>
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Schweiz</h1>
+            <br />
+            <h1>
+              <FaPhone size={18} />
+              <a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a>
+            </h1>
+            <br />
+            <h1>
+              <FaEnvelope size={18} />
+              <a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a>
+            </h1>
+            <br />
+            <br />
+            <br />
+            <h1>Ich freue mich auf Ihre Nachricht</h1>
+            <br />
             <Form
               name="contact"
               onSubmit={handleSubmit}
@@ -86,10 +96,7 @@ const Contact = props => {
                       whitespace: true
                     }
                   ]
-                })(<Input
-                      name="name"
-                      placeholder="Ihr Vorname und Nachname"
-                  />)}
+                })(<Input name="name" placeholder="Ihr Vorname und Nachname" />)}
               </FormItem>
               <FormItem label="Ihre E-Mail Adresse">
                 {getFieldDecorator("email", {
@@ -101,16 +108,13 @@ const Contact = props => {
                       type: "email"
                     }
                   ]
-                })(<Input
-                      name="email"
-                      placeholder="Ihre E-Mail Adresse"
-                    />
-                )}
+                })(<Input name="email" placeholder="Ihre E-Mail Adresse" />)}
               </FormItem>
               <FormItem label="Ihre Mitteilung">
                 {getFieldDecorator("message", {
                   rules: [
-                    { required: true,
+                    {
+                      required: true,
                       message: "Geben Sie bitte eine Mitteilung ein",
                       whitespace: true
                     }
@@ -129,12 +133,17 @@ const Contact = props => {
                 </Button>
               </FormItem>
             </Form>
-           <br></br>
-           <br></br>
-           <br></br>
+            <br />
+            <br />
+            <br />
             <h1>Gerne berate ich Sie auch bei mir persönlich</h1>
-            <br></br>
-            <iframe src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls" width="100%" height="400" frameborder="0" ></iframe>
+            <br />
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls"
+              width="100%"
+              height="400"
+              frameborder="0"
+            />
 
             {/* --- STYLES --- */}
             <style jsx>{`
@@ -175,12 +184,8 @@ const Contact = props => {
               }
             `}</style>
           </div>
-
-
-
         )}
       </ThemeContext.Consumer>
-
     </React.Fragment>
   );
 };
