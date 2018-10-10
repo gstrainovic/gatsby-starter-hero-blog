@@ -6,7 +6,7 @@ import Form from "antd/lib/form";
 import Input from "antd/lib/input";
 import PropTypes from "prop-types";
 import React from "react";
-
+import { FaPhone, FaMap, FaEnvelope } from "react-icons/fa/";
 const FormItem = Form.Item;
 const { TextArea } = Input;
 import "antd/lib/form/style/index.css";
@@ -58,11 +58,9 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div className="form">
-           <h1>Strainovic IT</h1>
-           <h1>Bahnstrasse 9b</h1>
-           <h1>CH-9323 Steinach</h1>
-           <h1><a href="tel:+41 79 411 71 77">+41 79 411 71 77</a></h1>
-           <h1><a href="mailto:info@strainovic-it.ch">info@strainovic-it.ch</a></h1>
+           <h1><FaMap size={18}/> Strainovic IT, Bahnstrasse 9b, CH-9323 Steinach</h1>
+           <h1><FaPhone size={18}/><a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a></h1>
+           <h1><FaEnvelope size={18}/><a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a></h1>
            <br></br>
             <Form
               name="contact"
