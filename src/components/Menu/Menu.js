@@ -6,7 +6,7 @@ import { FaHome, FaNewspaper } from "react-icons/fa/";
 import { FaSearch } from "react-icons/fa/";
 import { FaEnvelope } from "react-icons/fa/";
 import { FaImages } from "react-icons/fa/";
-
+import { FaHandsHelping } from "react-icons/fa/";
 import Item from "./Item";
 import Expand from "./Expand";
 
@@ -25,6 +25,7 @@ class Menu extends React.Component {
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
       { to: "/kontakt/", label: "Kontakt", icon: FaEnvelope },
+      { to: "/dienstleistungen/", label: "Dienstleistungen", icon: FaHandsHelping },
       { to: "/portfolio/", label: "Portfolio", icon: FaImages },
       { to: "/blog/", label: "Blog", icon: FaNewspaper },
       { to: "/suche/", label: "Suche", icon: FaSearch },
