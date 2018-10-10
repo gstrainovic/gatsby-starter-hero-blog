@@ -10,8 +10,8 @@ module.exports = {
   authorName: "Goran Strainovic",
   authorTwitterAccount: "strainovic_IT",
   // info
-  headerTitle: "Goran Strainovic",
-  headerSubTitle: "Web & Apps",
+  headerTitle: "Strainovic IT",
+  headerSubTitle: "IT & Web - Design & Programmierung",
   // manifest.json
   manifestName: "Strainovic IT",
   manifestShortName: "StrainovicIT", // max 12 characters
