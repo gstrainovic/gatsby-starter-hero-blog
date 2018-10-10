@@ -2,13 +2,16 @@ import PropTypes from "prop-types";
 import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
+import Portfolio from "../components/Blog";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
+import Article from "../components/Article";
+import Headline from "../components/Article/Headline";
 
 class IndexPage extends React.Component {
   separator = React.createRef();
 
-  scrollToContent = _ => {
+  scrollToContent = e => {
     this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
   };
 
@@ -45,7 +48,16 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <hr ref={this.separator} />
+        <ThemeContext.Consumer>
+          {theme => (
+            <Article theme={theme}>
+              <header>
+                <Headline type="primary" title="Dienstleistungen" theme={theme} />
+              </header>
+              <Portfolio posts={posts} theme={theme} />
+            </Article>
+          )}
+        </ThemeContext.Consumer>
 
         <Seo facebook={facebook} />
 
@@ -70,7 +82,7 @@ export default IndexPage;
 export const query = graphql`
   query IndexQuery {
     posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
+      filter: { fileAbsolutePath: { regex: "//service/[0-9]+.*--/" } }
       sort: { fields: [fields___prefix], order: DESC }
     ) {
       edges {
@@ -83,6 +95,7 @@ export const query = graphql`
           frontmatter {
             title
             category
+            author
             cover {
               children {
                 ... on ImageSharp {

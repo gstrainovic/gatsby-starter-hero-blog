@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
-import Portfolio from "../components/Portfolio";
+import Portfolio from "../components/Blog";
 import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
@@ -17,7 +17,7 @@ class IndexPage extends React.Component {
   render() {
     const {
       data: {
-        portf: { edges: portf = [] },
+        posts: { edges: posts = [] },
         bgDesktop: {
           resize: { src: desktop }
         },
@@ -47,7 +47,7 @@ class IndexPage extends React.Component {
               <header>
                 <Headline type="primary" title="Portfolio" theme={theme} />
               </header>
-              <Portfolio portf={portf} theme={theme} />
+              <Portfolio posts={posts} theme={theme} />
             </Article>
           )}
         </ThemeContext.Consumer>
@@ -69,7 +69,7 @@ export default IndexPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   query PortfolioQuery {
-    portf: allMarkdownRemark(
+    posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//portfolio/[0-9]+.*--/" } }
       sort: { fields: [fields___prefix], order: DESC }
     ) {

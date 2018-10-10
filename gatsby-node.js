@@ -142,6 +142,26 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
+        // Create service
+        const service = items.filter(item => item.node.fields.source === "service");
+        service.forEach(({ node }, index) => {
+          const slug = node.fields.slug;
+          const next = index === 0 ? undefined : service[index - 1].node;
+          const prev = index === service.length - 1 ? undefined : service[index + 1].node;
+          const source = node.fields.source;
+
+          createPage({
+            path: slug,
+            component: postTemplate,
+            context: {
+              slug,
+              prev,
+              next,
+              source
+            }
+          });
+        });
+
         // and pages.
         const pages = items.filter(item => item.node.fields.source === "pages");
         pages.forEach(({ node }) => {
