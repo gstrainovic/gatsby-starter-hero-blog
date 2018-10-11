@@ -31,11 +31,11 @@ const queries = [
 ];
 
 module.exports = {
+  // pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
     siteUrl: config.siteUrl,
-    pathPrefix: config.pathPrefix,
     algolia: {
       appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : "",
       searchOnlyApiKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY
@@ -48,24 +48,14 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-styled-jsx-postcss`, // as above
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    {
-      resolve: `gatsby-plugin-less`,
-      options: {
-        javascriptEnabled: true,
-        modifyVars: {
-          "card-shadow": "0 24px 16px 0 rgba(0,0,0,0.2);"
-        }
-      }
-    },
+    `gatsby-plugin-styled-jsx-postcss`, // as above
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/layouts/`)
       }
     },
-/*
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
@@ -76,7 +66,6 @@ module.exports = {
         chunkSize: 10000 // default: 1000
       }
     },
-*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -222,8 +211,6 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID
       }
     },
-    // in gatsby-config.js
-    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
