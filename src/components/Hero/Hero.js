@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FaArrowDown } from "react-icons/fa/";
+import { FaArrowDown, FaHeart } from "react-icons/fa/";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -10,7 +10,7 @@ const Hero = props => {
     <React.Fragment>
       <section className="hero">
         <h1>
-          This is a demo2 site of&nbsp;the <strong>heroBlog</strong> GatsbyJS starter
+          <FaHeart size={54}/>-Wilkommen auf der Webseite von <strong>Strainovic IT</strong>
         </h1>
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
