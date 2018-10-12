@@ -3,7 +3,7 @@ module.exports = {
   shortSiteTitle: "Strainovic IT", // <title> ending for posts and pages
   siteDescription: "Web & Apps",
   siteUrl: "https://strainovic-it.ch",
-  pathPrefix: "",
+  //pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "de",
   // author
@@ -25,7 +25,7 @@ module.exports = {
   // Replace your email adress with md5-code.
   // Example https://www.gravatar.com/avatar/g.strainovic@gmail.com ->
   // gravatarImgMd5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
-  gravatarImgMd5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
+  gravatarImgMd5: "",
 
   // social
   authorSocialLinks: [

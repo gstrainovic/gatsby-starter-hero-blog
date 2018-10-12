@@ -142,7 +142,7 @@ const Contact = props => {
               src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls"
               width="100%"
               height="400"
-              frameborder="0"
+              frameBorder="0"
             />
 
             {/* --- STYLES --- */}
