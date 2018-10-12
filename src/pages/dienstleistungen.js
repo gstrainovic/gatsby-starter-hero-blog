@@ -7,37 +7,17 @@ import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 
-class IndexPage extends React.Component {
-  separator = React.createRef();
-
-  scrollToContent = _ => {
-    this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
-  };
-
+class ServicePage extends React.Component {
+  
   render() {
     const {
       data: {
         posts: { edges: posts = [] },
-        bgDesktop: {
-          resize: { src: desktop }
-        },
-        bgTablet: {
-          resize: { src: tablet }
-        },
-        bgMobile: {
-          resize: { src: mobile }
-        },
         site: {
           siteMetadata: { facebook }
         }
       }
     } = this.props;
-
-    const backgrounds = {
-      desktop,
-      tablet,
-      mobile
-    };
 
     return (
       <React.Fragment>
@@ -52,23 +32,21 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <style jsx>{``}</style>
-
         <Seo facebook={facebook} />
       </React.Fragment>
     );
   }
 }
 
-IndexPage.propTypes = {
+ServicePage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default IndexPage;
+export default ServicePage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query ServoceQuery {
+  query ServiceQuery {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//service/[0-9]+.*--/" } }
       sort: { fields: [fields___prefix], order: DESC }
@@ -101,21 +79,6 @@ export const query = graphql`
         facebook {
           appId
         }
-      }
-    }
-    bgDesktop: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 1200, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgTablet: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgMobile: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
-        src
       }
     }
   }
