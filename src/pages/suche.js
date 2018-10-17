@@ -27,55 +27,57 @@ class Toggle extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleClick}>{this.state.isToggleOn ? "ON" : "OFF"}</button>;
+    const {
+      data: {
+        site: {
+          siteMetadata: { algolia, facebook }
+        }
+      }
+    } = this.props;
+
+    return (
+      <React.Fragment>
+        <ThemeContext.Consumer>
+          {theme => (
+            <Article theme={theme}>
+              <div>
+                <button onClick={this.handleClick}>test</button>
+                {this.state.isToggleOn ? (
+                  <div className="icon">
+                    <AlgoliaIcon />
+                    <Search algolia={algolia} />
+                  </div>
+                ) : (
+                  "OFF"
+                )}
+
+                {/* --- STYLES --- */}
+                <style jsx>{`
+                  .icon {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 20px;
+                  }
+                  .icon :global(svg) {
+                    height: 30px;
+                  }
+                `}</style>
+              </div>
+            </Article>
+          )}
+        </ThemeContext.Consumer>
+
+        <Seo facebook={facebook} />
+      </React.Fragment>
+    );
   }
 }
 
-const SearchPage = props => {
-  const {
-    data: {
-      site: {
-        siteMetadata: { algolia, facebook }
-      }
-    }
-  } = props;
-
-  return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
-            <Toggle />
-            <div className="icon">
-              <AlgoliaIcon />
-            </div>
-            <Search algolia={algolia} theme={theme} />
-          </Article>
-        )}
-      </ThemeContext.Consumer>
-
-      <Seo facebook={facebook} />
-
-      {/* --- STYLES --- */}
-      <style jsx>{`
-        .icon {
-          display: flex;
-          justify-content: flex-end;
-          margin-bottom: 20px;
-        }
-        .icon :global(svg) {
-          height: 30px;
-        }
-      `}</style>
-    </React.Fragment>
-  );
-};
-
-SearchPage.propTypes = {
+Toggle.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default SearchPage;
+export default Toggle;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
