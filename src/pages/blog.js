@@ -31,6 +31,7 @@ class BlogPage extends React.Component {
             </Article>
           )}
         </ThemeContext.Consumer>
+
         <Seo facebook={facebook} />
       </React.Fragment>
     );
@@ -82,3 +83,5 @@ export const query = graphql`
     }
   }
 `;
+
+//hero-background
