@@ -6,7 +6,7 @@ import Form from "antd/lib/form";
 import Input from "antd/lib/input";
 import PropTypes from "prop-types";
 import React from "react";
-import { FaPhone, FaMap, FaEnvelope } from "react-icons/fa/";
+import { FaPhone, FaMap, FaEnvelope, FaMapMarker, FaRoad } from "react-icons/fa/";
 const FormItem = Form.Item;
 const { TextArea } = Input;
 import "antd/lib/form/style/index.css";
@@ -59,18 +59,43 @@ const Contact = props => {
         {theme => (
           <div className="form">
             <h1>
-              <FaMap size={18} /> Strainovic IT
+              Adresse
             </h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Bahnstrasse 9b</h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;St.Gallen (SG)</h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Schweiz</h1>
+            <br />
+            <h3><FaMap size={18} /> Strainovic IT</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bahnstrasse 9b</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;St.Gallen (SG)</h3>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schweiz</h3>
+            <br />
+            <br />
+            <br />
+            <h1>Gerne berate ich dich auch bei mir persönlich</h1>
+            <br />
+            <h3>
+              <FaMapMarker size={18} />
+              <a target="_blank" href="https://www.google.com/maps/place/Strainovic+IT/@47.5008767,9.4411352,17z/data=!3m1!4b1!4m5!3m4!1s0x479b1cf2d3e32e4f:0xb09b276dcd03f76c!8m2!3d47.5008767!4d9.4433292?hl=de"
+                > Adresse auf Google Maps anzeigen</a>
+            </h3>
+            <h3>
+              <FaRoad size={18} />
+              <a target="_blank" href="https://www.google.com/maps/dir//Strainovic+IT,+Bahnstrasse,+Steinach,+Schweiz/@47.5008553,9.3731178,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x479b1cf2d3e32e4f:0xb09b276dcd03f76c!2m2!1d9.4433292!2d47.5008767?hl=de"
+                > Route zu mir mit Google Maps planen</a>
+            </h3>
+            <br />
+            <br />
+            <br />
+            <h2>Mobile</h2>
             <br />
             <h1>
               <FaPhone size={18} />
               <a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a>
             </h1>
+            <br />
+            <br />
+            <br />
+            <h2>Email</h2>
             <br />
             <h1>
               <FaEnvelope size={18} />
@@ -79,7 +104,7 @@ const Contact = props => {
             <br />
             <br />
             <br />
-            <h1>Ich freue mich auf Ihre Nachricht</h1>
+            <h1>Ich freue mich auf deine Nachricht</h1>
             <br />
             <Form
               name="contact"
@@ -87,17 +112,6 @@ const Contact = props => {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
-              <FormItem label="Ihr Vorname und Nachname">
-                {getFieldDecorator("name", {
-                  rules: [
-                    {
-                      required: true,
-                      message: "Geben Sie bitte Ihren Vorname und Nachname ein",
-                      whitespace: true
-                    }
-                  ]
-                })(<Input name="name" placeholder="Ihr Vorname und Nachname" />)}
-              </FormItem>
               <FormItem label="Ihre E-Mail Adresse">
                 {getFieldDecorator("email", {
                   rules: [
@@ -133,18 +147,6 @@ const Contact = props => {
                 </Button>
               </FormItem>
             </Form>
-            <br />
-            <br />
-            <br />
-            <h1>Gerne berate ich Sie auch bei mir persönlich</h1>
-            <br />
-            <iframe
-              src="https://www.google.com/maps/embed/v1/place?q=Strainovic%20IT&key=AIzaSyDUUYNFXEhy1raQAPrhYCdSCttMLgMsxls"
-              width="100%"
-              height="400"
-              frameBorder="0"
-            />
-
             {/* --- STYLES --- */}
             <style jsx>{`
               .form {
