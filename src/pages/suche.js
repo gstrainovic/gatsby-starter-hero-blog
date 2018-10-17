@@ -7,23 +7,28 @@ import Article from "../components/Article";
 import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
-
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
-import Switch from 'antd/lib/switch';
-import 'antd/lib/switch/style/index.css'
+//import Switch from "antd/lib/switch";
+//import "antd/lib/switch/style/index.css";
 
-function onChange(checked)  {
-//  const isLoggedIn = props.isLoggedIn;
-  if (checked) {
-    return
-    <React.Fragment>
-            <div className="icon">
-                  <AlgoliaIcon />
-             </div>
-             <Search algolia={algolia} theme={theme} />
-    </React.Fragment>
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
   }
-  return null;
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return <button onClick={this.handleClick}>{this.state.isToggleOn ? "ON" : "OFF"}</button>;
+  }
 }
 
 const SearchPage = props => {
@@ -40,12 +45,14 @@ const SearchPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
-            <Switch defaultChecked onChange={onChange}/>
-          </Article>)
-        }
+            <Toggle />
+            <div className="icon">
+              <AlgoliaIcon />
+            </div>
+            <Search algolia={algolia} theme={theme} />
+          </Article>
+        )}
       </ThemeContext.Consumer>
-
-
 
       <Seo facebook={facebook} />
 
