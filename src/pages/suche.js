@@ -9,6 +9,22 @@ import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
+import Switch from 'antd/lib/switch';
+import 'antd/lib/switch/style/index.css'
+
+function onChange(checked)  {
+//  const isLoggedIn = props.isLoggedIn;
+  if (checked) {
+    return
+    <React.Fragment>
+            <div className="icon">
+                  <AlgoliaIcon />
+             </div>
+             <Search algolia={algolia} theme={theme} />
+    </React.Fragment>
+  }
+  return null;
+}
 
 const SearchPage = props => {
   const {
@@ -24,14 +40,12 @@ const SearchPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
-            <div className="icon">
-              <AlgoliaIcon />
-            </div>
-
-            <Search algolia={algolia} theme={theme} />
-          </Article>
-        )}
+            <Switch defaultChecked onChange={onChange}/>
+          </Article>)
+        }
       </ThemeContext.Consumer>
+
+
 
       <Seo facebook={facebook} />
 
