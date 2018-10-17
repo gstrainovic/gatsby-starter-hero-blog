@@ -8,8 +8,10 @@ import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
-//import Switch from "antd/lib/switch";
-//import "antd/lib/switch/style/index.css";
+import Switch from "antd/lib/switch";
+import Alert from "antd/lib/alert";
+import "antd/lib/switch/style/index.css";
+import "antd/lib/alert/style/index.css";
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -41,14 +43,17 @@ class Toggle extends React.Component {
           {theme => (
             <Article theme={theme}>
               <div>
-                <button onClick={this.handleClick}>test</button>
+                <Switch onChange={this.handleClick} />
+
                 {this.state.isToggleOn ? (
-                  <div className="icon">
-                    <AlgoliaIcon />
-                    <Search algolia={algolia} />
-                  </div>
+                  <Alert message="Warning" type="warning" showIcon />
                 ) : (
-                  "OFF"
+                  <div>
+                    <div className="icon">
+                      <AlgoliaIcon />
+                    </div>
+                    <Search algolia={algolia} theme={theme} />
+                  </div>
                 )}
 
                 {/* --- STYLES --- */}
