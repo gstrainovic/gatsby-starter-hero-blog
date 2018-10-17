@@ -30,7 +30,6 @@ The original version of the starter is preserved as the branch `gatsby-v1`.
 - **CSS** with `styled-jsx` and `PostCSS`
 - **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
 - **Social** sharing (Twitter, Facebook, Google, LinkedIn)
-- **Comments** (Facebook)
 - **Images** lazy loading and `webp` support (gatsby-image)
 - Post **categories** (category based post list)
 - Full text **searching** (Algolia)
@@ -46,7 +45,6 @@ The original version of the starter is preserved as the branch `gatsby-v1`.
 - **ESLint** (google config)
 - **Prettier** code styling
 - Webpack `BundleAnalyzerPlugin`
-- **Gravatar** image (optional) instead local Avatar/Logo image
 
 ## Prerequisites
 
