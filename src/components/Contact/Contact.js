@@ -58,9 +58,6 @@ const Contact = props => {
       <ThemeContext.Consumer>
         {theme => (
           <div className="form">
-            <h1>
-              Adresse
-            </h1>
             <br />
             <h3><FaMap size={18} /> Strainovic IT</h3>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goran Strainovic</h3>
@@ -68,10 +65,13 @@ const Contact = props => {
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CH-9323 Steinach</h3>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;St.Gallen (SG)</h3>
             <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Schweiz</h3>
-            <br />
-            <br />
-            <br />
-            <h1>Gerne berate ich dich auch bei mir persönlich</h1>
+            <h3>
+              <a href="tel:+41 79 411 71 77"><FaPhone size={18} />+41 79 411 71 77</a>
+            </h3>
+            <h3>
+              <FaEnvelope size={18} />
+              <a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a>
+            </h3>
             <br />
             <h3>
               <FaMapMarker size={18} />
@@ -81,30 +81,12 @@ const Contact = props => {
             <h3>
               <FaRoad size={18} />
               <a target="_blank" href="https://www.google.com/maps/dir//Strainovic+IT,+Bahnstrasse,+Steinach,+Schweiz/@47.5008553,9.3731178,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x479b1cf2d3e32e4f:0xb09b276dcd03f76c!2m2!1d9.4433292!2d47.5008767?hl=de"
-                > Route zu mir mit Google Maps planen</a>
+                > Route mit Google Maps planen</a>
             </h3>
             <br />
+
             <br />
-            <br />
-            <h2>Mobile</h2>
-            <br />
-            <h1>
-              <FaPhone size={18} />
-              <a href="tel:+41 79 411 71 77"> +41 79 411 71 77</a>
-            </h1>
-            <br />
-            <br />
-            <br />
-            <h2>Email</h2>
-            <br />
-            <h1>
-              <FaEnvelope size={18} />
-              <a href="mailto:info@strainovic-it.ch"> info@strainovic-it.ch</a>
-            </h1>
-            <br />
-            <br />
-            <br />
-            <h1>Ich freue mich auf deine Nachricht</h1>
+            <h1>Ich freue mich auf Ihre Nachricht</h1>
             <br />
             <Form
               name="contact"
