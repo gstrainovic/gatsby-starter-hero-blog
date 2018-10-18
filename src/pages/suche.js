@@ -8,10 +8,12 @@ import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
-import Switch from "antd/lib/switch";
-import Alert from "antd/lib/alert";
-import "antd/lib/switch/style/index.css";
-import "antd/lib/alert/style/index.css";
+import Card from 'antd/lib/card'
+import Icon from 'antd/lib/icon'
+import Button from 'antd/lib/button'
+import 'antd/lib/button/style/index.css'
+import 'antd/lib/card/style/index.css'
+import 'antd/lib/icon/style/index.css'
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class Toggle extends React.Component {
   }
 
   render() {
+    const { Meta } = Card;
+
     const {
       data: {
         site: {
@@ -43,15 +47,33 @@ class Toggle extends React.Component {
           {theme => (
             <Article theme={theme}>
               <div>
-                <Switch onChange={this.handleClick} />
+                <div className="icon">
+                  <AlgoliaIcon />
+                </div>
 
                 {this.state.isToggleOn ? (
-                  <Alert message="Warning" type="warning" showIcon />
+                  <Card
+                    style={{
+                      //width: 300,
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
+                      }}
+
+                    actions={[<Button onClick={this.handleClick} type="primary" icon="search">Suche aktivieren</Button>]}
+                  >
+                    <Meta
+                      avatar={<Icon type="info-circle" theme="outlined" />}
+                      title="Datenschutz"
+                      description="In unseren Apps wird die Suche nach Seiteninhalten durch Algolia realisiert.
+                      Suchanfragen werden mit sofortiger visueller Rückmeldung und Typo-Toleranz geliefert.
+                      Dieser Dienst hat darum Zugriff auch auf die im Webbrowser und in der App eingegebenen Suchanfragen.
+                      Dabei wird zumindestens die IP-Adresse des Browsers des Endgerätes des Nutzers dieser Webseite gespeichert.
+                      Genaue Informationen finden Sie in den Datenschutzrichtlinien von Algolia unter: https://www.algolia.com/policies/privacy."
+                    />
+                  </Card>
                 ) : (
                   <div>
-                    <div className="icon">
-                      <AlgoliaIcon />
-                    </div>
+
                     <Search algolia={algolia} theme={theme} />
                   </div>
                 )}
