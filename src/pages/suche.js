@@ -8,12 +8,12 @@ import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
-import Card from 'antd/lib/card'
-import Icon from 'antd/lib/icon'
-import Button from 'antd/lib/button'
-import 'antd/lib/button/style/index.css'
-import 'antd/lib/card/style/index.css'
-import 'antd/lib/icon/style/index.css'
+import Card from "antd/lib/card";
+import Icon from "antd/lib/icon";
+import Button from "antd/lib/button";
+import "antd/lib/button/style/index.css";
+import "antd/lib/card/style/index.css";
+import "antd/lib/icon/style/index.css";
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -30,6 +30,13 @@ class Toggle extends React.Component {
     }));
   }
 
+  newMethod() {
+    return (
+      <Button onClick={this.handleClick} type="primary" icon="search">
+        Suche aktivieren
+      </Button>
+    );
+  }
   render() {
     const { Meta } = Card;
 
@@ -55,16 +62,15 @@ class Toggle extends React.Component {
                   <Card
                     style={{
                       //width: 300,
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
-                      }}
-
-                    actions={[<Button onClick={this.handleClick} type="primary" icon="search">Suche aktivieren</Button>]}
+                      marginLeft: "auto",
+                      marginRight: "auto"
+                    }}
+                    actions={[this.newMethod()]}
                   >
                     <Meta
                       avatar={<Icon type="info-circle" theme="outlined" />}
                       title="Datenschutz"
-                      description="In unseren Apps wird die Suche nach Seiteninhalten durch Algolia realisiert.
+                      description="Bei dieser Webseite wird die Suche nach Seiteninhalten durch Algolia realisiert.
                       Suchanfragen werden mit sofortiger visueller Rückmeldung und Typo-Toleranz geliefert.
                       Dieser Dienst hat darum Zugriff auch auf die im Webbrowser und in der App eingegebenen Suchanfragen.
                       Dabei wird zumindestens die IP-Adresse des Browsers des Endgerätes des Nutzers dieser Webseite gespeichert.
@@ -73,7 +79,6 @@ class Toggle extends React.Component {
                   </Card>
                 ) : (
                   <div>
-
                     <Search algolia={algolia} theme={theme} />
                   </div>
                 )}
